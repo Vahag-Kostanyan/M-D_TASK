@@ -1,0 +1,18 @@
+extend type Query {
+    users: [User!]! @guard @paginate
+    user(id: ID @eq): User! @guard @find
+}
+
+extend type Mutation {    
+  # updateUser(id: ID!, name: String, email: String, password: String) : User  @update
+  upsertUser(id: ID!, name: String, email: String, password: String) : User @guard @upsert
+}
+
+type User {
+  id: ID!
+  name: String!
+  email: String!
+  email_verified_at: String
+  password: String!
+  posts: [Post]! @hasMany
+}

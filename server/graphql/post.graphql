@@ -1,0 +1,45 @@
+extend type Query {
+  posts: [Post!]! @all
+  post(id: ID @eq): Post @find 
+}
+
+
+extend type Mutation {
+  createPost(
+    title: String!,
+    user_id: Int!,
+    title: discription!, 
+    mark: String!,
+    length: String!,
+    price: String!,
+    date: Date!,
+    populear: Bool,
+    # images: Array!
+   ) : Post @guard
+  
+  updatePost(
+    id: ID,
+    title: String!,
+    user_id: Int!,
+    title: discription!, 
+    mark: String!,
+    length: String!,
+    price: String!,
+    date: Date!,
+    populear: Bool,
+    # images: Array!
+   ) : Post @guard
+}
+
+type Post {
+  id: ID!,
+  user_id: ID,
+  description: String,
+  title: String,
+  mark: String,
+  length: String,
+  # date: Date,
+  populear: Int,
+  price: Float,
+  users: User! @BelongsTo
+}

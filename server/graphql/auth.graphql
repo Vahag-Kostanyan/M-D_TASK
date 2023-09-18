@@ -1,0 +1,18 @@
+extend type Mutation {
+    registration(
+        name: String!, 
+        email: String! @rules(apply: ["email", "unique:users"]), 
+        phone: String! @rules(apply: ["phone"]), 
+        bank_account: String!, 
+        password: String! @rules(apply: ["min:8"])) : User! @create 
+    
+    login(
+        email: String! @rules(apply: ["email"]),
+        password: String! @rules(apply: ["min:8"]),
+        device: String!
+    ) : String!      
+}
+
+extend type Query {
+    me: User! @guard @auth
+}
