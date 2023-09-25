@@ -7,8 +7,14 @@ export const GET_POST = gql`
             title,
             price,
             mark,
+            description,
+            length,
+            date,
             users {
                 name
+            }
+            images{
+                image_url
             }
         }
     }

@@ -1,10 +1,11 @@
 extend type Mutation {
-    registration(
+    signup(
         name: String!, 
-        email: String! @rules(apply: ["email", "unique:users"]), 
-        phone: String! @rules(apply: ["phone"]), 
-        bank_account: String!, 
-        password: String! @rules(apply: ["min:8"])) : User! @create 
+        email: String!  @rules(apply: ["email", "unique:users"]), 
+        phone: String!, 
+        bank_account: String! @rules(apply: ["size:16"]), 
+        password: String! @rules(apply: ["min:8"]) 
+        ) : String! 
     
     login(
         email: String! @rules(apply: ["email"]),

@@ -24,7 +24,7 @@ class ImageFactory extends Factory
             },
             'parent_type' => Image::TYPE_POST,
             'is_main' => false,
-            'image_url' => $this->faker->url(),
+            'image_url' => "https://static.b24.co/thumbs/large/556878-1694499630.jpg",
         ];
     }
 }

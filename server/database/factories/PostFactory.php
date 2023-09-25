@@ -24,6 +24,7 @@ class PostFactory extends Factory
             'description' => $this->faker->century(),
             'title' => $this->faker->century(),
             'mark' => $this->faker->century(),
+            'location' => $this->faker->century(),
             'date' => $this->faker->date(),
             'length' => '22m',
             'populear' => $this->faker->numberBetween(0, 100),

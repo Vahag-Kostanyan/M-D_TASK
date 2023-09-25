@@ -1,6 +1,6 @@
 import React from 'react'
 import { useQuery } from '@apollo/client'
-import { GET_POSTS_LIST } from '../Query/query';
+import { GET_POSTS_LIST } from './Query/query';
 import MainCard from './components/MainCard';
 import { useNavigate } from 'react-router-dom';
 

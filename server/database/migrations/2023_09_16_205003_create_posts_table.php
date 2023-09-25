@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('mark');
             $table->string('length');
+            $table->string('location');
             $table->decimal('price');
             $table->date('date');
             $table->integer('populear')->default(0);

@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Post extends Model
@@ -14,12 +15,12 @@ class Post extends Model
     protected $fillable = [
         'user_id',
         'title',
-        'discription',
+        'description',
         'mark',
         'length',
+        'location',
         'price',
         'date',
-        'location',
         'populear',
     ];
 
@@ -31,5 +32,12 @@ class Post extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
+    /**
+     * @return hasOne
+     */
+    public function images(): hasOne
+    {
+        return $this->hasOne(Image::class, "parent_id", "id");
+    }
 
 }

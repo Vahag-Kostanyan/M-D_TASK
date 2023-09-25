@@ -1,15 +1,4 @@
 extend type Query {
-  images: [Image] @guard @all
-  images(id: ID @eq): Post @guard @find 
+  images: [Image] @all
+  images(id: ID @eq): Post  @find 
 }
-
-
-type Image {
-  id: ID!,
-  parent_id: ID,
-  parent_type: String,
-  is_main: Bool,
-  image_url: String,
-  posts: Post! @BelongsTo
-}
-

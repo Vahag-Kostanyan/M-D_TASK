@@ -1,0 +1,1 @@
+export const isCurrentPath = (currentpath : string) : boolean => window.location.pathname === currentpath
