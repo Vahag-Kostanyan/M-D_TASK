@@ -11,7 +11,8 @@ export const GET_POST = gql`
             length,
             date,
             users {
-                name
+                phone,
+                email
             }
             images{
                 image_url

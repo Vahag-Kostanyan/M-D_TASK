@@ -12,6 +12,7 @@ type User {
   id: ID!
   name: String!
   email: String!
+  phone: String!
   email_verified_at: String
   password: String!
   posts: [Post]! @hasMany

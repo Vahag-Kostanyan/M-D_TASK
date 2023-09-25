@@ -19,6 +19,7 @@ class Post extends Model
         'mark',
         'length',
         'location',
+        'phone',
         'price',
         'date',
         'populear',
